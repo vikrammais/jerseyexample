@@ -1,0 +1,8 @@
+org\chaiboy\webapp\entity\Customer.class
+org\chaiboy\webapp\dao\ClientDao.class
+org\chaiboy\webapp\dao\AbstractDAO.class
+org\chaiboy\webapp\TokenVerify.class
+org\chaiboy\webapp\ClientService.class
+org\chaiboy\webapp\dao\CustomerDao.class
+org\chaiboy\webapp\CustomerService.class
+org\chaiboy\webapp\entity\Client.class
