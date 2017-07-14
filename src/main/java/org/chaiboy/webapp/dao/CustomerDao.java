@@ -1,6 +1,8 @@
 package org.chaiboy.webapp.dao;
 
+import com.google.api.client.http.HttpStatusCodes;
 import org.chaiboy.webapp.entity.Customer;
+import org.chaiboy.webapp.entity.exception.MockathonException;
 
 import java.sql.*;
 
@@ -8,7 +10,7 @@ import java.sql.*;
 /**
  * Created by Vikram Aditya on 6/23/2017.
  */
-public class CustomerDao extends AbstractDAO {
+public class CustomerDAO extends AbstractDAO {
 
 
     public void createCustomer(Customer customer) throws Exception {
@@ -27,23 +29,20 @@ public class CustomerDao extends AbstractDAO {
         }
     }
 
-    public Customer getCustomer(int id) throws Exception {
+    public Customer getCustomer(String id) throws Exception {
         String selectCustomer = "SELECT * FROM customer WHERE id = ?;";
-        try {
-            Connection conn = createConnection();
-            PreparedStatement statement = conn.prepareStatement(selectCustomer);
-            statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-                Customer customer = new Customer();
-                customer.setId(id);
-                customer.setName(resultSet.getString("name"));
-                customer.setEmail(resultSet.getString("email"));
-                customer.setPhone(resultSet.getString("phone"));
-                return customer;
-        } catch (SQLException e) {
-            throw new Exception("ERROR_FETCHING_CUSTOMER", e);
-        }
+
+        Connection conn = createConnection();
+        PreparedStatement statement = conn.prepareStatement(selectCustomer);
+        statement.setLong(1, id);
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+        Customer customer = new Customer();
+        customer.setId(id);
+        customer.setLastName(resultSet.getString("name"));
+        customer.setEmail(resultSet.getString("email"));
+        customer.setContact(resultSet.getString("phone"));
+        return customer;
     }
 
 }

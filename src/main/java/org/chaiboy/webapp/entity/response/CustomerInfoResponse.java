@@ -1,31 +1,24 @@
-package org.chaiboy.webapp.entity;
+package org.chaiboy.webapp.entity.response;
 
 import com.google.api.client.util.DateTime;
+import org.chaiboy.webapp.entity.Attribute;
+
+import java.util.List;
 
 /**
- * Created by Vikram Aditya on 6/23/2017.
+ * Created by laxman.muttineni on 10/07/17.
  */
-public class Customer {
-
-    private String id;
+public class CustomerInfoResponse extends BaseResponse {
     private String firstName;
     private String lastName;
     private String contact;
     private DateTime dateOfJoining;
     private String email;
-    private int roleId;
-    private int locationId;
-    private String password;
-    private int companyId;
+    private String role;
+    private String location;
+    private String company;
     private String status;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private List<Attribute> attributes;
 
     public String getFirstName() {
         return firstName;
@@ -67,36 +60,28 @@ public class Customer {
         this.email = email;
     }
 
-    public int getRoleId() {
-        return roleId;
+    public String getRole() {
+        return role;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public int getLocationId() {
-        return locationId;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCompany() {
+        return company;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public String getStatus() {
@@ -105,5 +90,13 @@ public class Customer {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<Attribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<Attribute> attributes) {
+        this.attributes = attributes;
     }
 }
