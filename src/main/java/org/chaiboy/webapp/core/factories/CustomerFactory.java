@@ -1,6 +1,6 @@
 package org.chaiboy.webapp.core.factories;
 
-import org.chaiboy.webapp.entity.Customer;
+import org.chaiboy.webapp.entity.user.Customer;
 import org.chaiboy.webapp.entity.response.CustomerInfoResponse;
 
 /**

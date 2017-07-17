@@ -1,7 +1,6 @@
 package org.chaiboy.webapp.dao;
 
 import org.chaiboy.webapp.entity.Client;
-import org.chaiboy.webapp.entity.Customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

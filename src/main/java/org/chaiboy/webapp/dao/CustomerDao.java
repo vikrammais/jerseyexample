@@ -1,8 +1,6 @@
 package org.chaiboy.webapp.dao;
 
-import com.google.api.client.http.HttpStatusCodes;
-import org.chaiboy.webapp.entity.Customer;
-import org.chaiboy.webapp.entity.exception.MockathonException;
+import org.chaiboy.webapp.entity.user.Customer;
 
 import java.sql.*;
 
@@ -34,7 +32,7 @@ public class CustomerDAO extends AbstractDAO {
 
         Connection conn = createConnection();
         PreparedStatement statement = conn.prepareStatement(selectCustomer);
-        statement.setLong(1, id);
+        statement.setString(1, id);
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
         Customer customer = new Customer();
